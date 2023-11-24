@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrivez-vous</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="test.css">
+    <script src="test.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body class="">
+    <form class="border p-5 d-flex justify-content-center align-items-center">
+        <div class="profil-image"> 
+            <input type="file" name="profil" id="profil" style="display: none;" accept="image/*">
+            <img src="./assets/5907.jpg" onclick="addPicture()" id="image" alt="" class="img-fluid">
+        </div>
+        <div class="l-side flex-fill" id="left-side">
+            <div class="heading pt-3">
+                <p class="pt-3">Inscrivez-vous</p>
+            </div>
+            <div class="d-flex flex-column" >
+            <div class="mb-3 ">
+                <input type="text" id="name" name="name" placeholder="Nom Complet" class="" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" name="email" id="email" placeholder="Adresse Email" required>
+            </div>
+            <div class="mb-3 d-flex">
+                <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+                <span onclick="showpassword(0)" toggle="#passwordInput" class="eye-toggle">
+                    <i class="bi bi-eye"></i>
+                </span>
+            </div>
+            <span style="font-size: x-small;">Le mot de passe doit contenir minimum 20 caracteres dont 1 caractere special</span>
+            <div class="mb-3 d-flex">
+                <input type="password" name="confirm" id="confirm" placeholder="Confirmer mot de passe" class="" required>
+                <span onclick="showpassword(1)" toggle="#passwordInput" class="eye-toggle">
+                    <i class="bi bi-eye"></i>
+                </span>
+            </div>
+            <div class="mb-3 d-flex flex-row">
+                <div class="form-switch gap-2 flex-fill d-flex flex-row justify-content-left align-items-center">
+                    <input type="checkbox" class="form-check-input mr-2 text-danger" name="remembre" id="remembre">
+                    <label class="text-center">se souvenir</label>
+                </div>
+                <div class="submit-button flex-fill d-flex">
+                    <button class="btn btn-danger" style="width: 100%;" onclick="check()">Inscrire</button>
+                </div>
+            </div>
+            <hr>
+            <br><br>
+            </div>
+            <div class="other d-flex flex-column gap-2">
+                <a class="bg-primary btn text-white p-1"><i class="bi bi-facebook"></i> s'inscrire avec Facebook</a>
+                <a id="google" class="bg-danger btn text-white p-1"><i class="bi bi-google"></i> s'inscrire avec Google</a>
+            </div>
+            <br>
+        </div>
+        <div class="r-side d-none d-lg-block  flex-fill text-center">
+            <img src="./assets/in1.png" class="img-fluid" alt="">
+        </div>
+    </form>
+    <footer>
+        <img src="./assets//logo.png" alt="" class="img-fluid">
+    </footer>
+    <div id="err" onclick="closeErr()" style="display: none;"  class="alert alert-danger alert-dismissible fade show" role="alert">
+        
+    </div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
